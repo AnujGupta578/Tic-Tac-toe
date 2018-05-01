@@ -1,0 +1,66 @@
+{
+    "extends": [
+        "tslint-react",
+        "tslint:recommended",
+        "tslint-config-prettier"
+    ],
+    "rules": {
+        "indent": [
+            true,
+            "spaces"
+        ],
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
+        "no-console": [
+            true,
+            {
+                "allow": [
+                    "log",
+                    "error",
+                    "debug",
+                    "info",
+                    "time",
+                    "timeEnd",
+                    "trace"
+                ]
+            }
+        ],
+        "ordered-imports": [
+            true,
+            {
+                "import-sources-order": "any",
+                "named-imports-order": "any",
+                "grouped-imports": "any",
+                "module-source-path": "any"
+            }
+        ],
+        "variable-name": [
+            {
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "enum": [
+                        "check-format",
+                        "allow-leading-underscore",
+                        "allow-trailing-underscore",
+                        "allow-pascal-case",
+                        "allow-snake-case",
+                        "ban-keywords"
+                    ]
+                }
+            }
+        ],
+        "object-literal-sort-keys": [
+            {
+                "type": "string",
+                "enum": [
+                    "ignore-case",
+                    "match-declaration-order",
+                    "shorthand-first"
+                ]
+            }
+        ]
+    }
+}

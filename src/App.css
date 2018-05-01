@@ -1,0 +1,44 @@
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.custom-button {
+  margin: 5px 0;
+  display: block;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.box-margin{
+  margin: 50px;
+}
+
+.button-padding{
+  display: -webkit-inline-box;
+}
+.button-padding > span{
+  margin-left: 30px;
+}
+
+.login-button{
+float: right;
+}
