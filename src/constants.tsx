@@ -7,6 +7,8 @@ export type Clicked_Move = typeof Clicked_Move;
 export const GO_TO_START_GAME = 'GO_TO_START_GAME';
 export type GO_TO_START_GAME = typeof GO_TO_START_GAME;
 
+
+
 export const SquareValue = [
     {
         id: 1,
@@ -81,3 +83,9 @@ export const Suggestions = [
     { label: 'British Indian Ocean Territory' },
     { label: 'Brunei Darussalam' },
 ];
+
+export const styles = (theme: any) => ({
+    button: {
+        margin: theme.spacing.unit,
+    },
+});

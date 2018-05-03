@@ -14,6 +14,8 @@ export interface Suggestions {
 }
 
 export interface StoreState {
+    isWinner: boolean;
+    tag: string;
     defaultValue: string;
     history: ClickHistory[];
     square: SquareValue[];
@@ -21,6 +23,8 @@ export interface StoreState {
 }
 
 export interface Props {
+    isWinner?:boolean;
+    title?: string;
     value?: string;
     squareCount?: number[];
     square?: SquareValue[];

@@ -7,7 +7,10 @@ export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreSt
         case GO_TO_START_GAME:
             return {
                 ...state,
-                square: state.square.map((square => square.value !== '' ? { ...square, value: '' } : square))
+                square: state.square.map((square => square.value !== '' ? { ...square, value: '' } : square)),
+                defaultValue: 'X',
+                history: [],
+                isWinner: false
             }
 
         case changeState:
@@ -23,7 +26,6 @@ export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreSt
             if (playerClick) {
                 return { ...state };
             }
-
             return {
                 ...state,
                 defaultValue: setNewValue(state.defaultValue),
@@ -31,6 +33,7 @@ export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreSt
                     squareId: action.id,
                     value: state.defaultValue
                 }],
+                isWinner: getWinner(state.square, action.id, state.tag, state.isWinner),
                 square: state.square.map((square, index) => square.id === action.id ? {
                     ...square, value: state.defaultValue
                 } : square)
@@ -89,4 +92,26 @@ const getValueFromHistory = (square: SquareValue, newArr: ClickHistory[]): any =
     }
 
     return square;
+}
+const getWinner = (squares: SquareValue[], actionId: number, title: string, isWinner: boolean) => {
+    console.log(squares, actionId, title);
+    // let winner = "";
+    const lines = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    for (let i = 0; i < lines.length; i++) {
+        const [a, b, c] = lines[i];
+        if (squares[a].value && squares[a].value === squares[b].value && squares[a].value === squares[c].value) {
+            isWinner = true
+        }
+    }
+    return isWinner;
 }

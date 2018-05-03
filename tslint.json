@@ -5,6 +5,9 @@
         "tslint-config-prettier"
     ],
     "rules": {
+        "jsx-boolean-value": [
+            "never"
+        ],
         "indent": [
             true,
             "spaces"
@@ -61,6 +64,7 @@
                     "shorthand-first"
                 ]
             }
-        ]
+        ],
+        "prefer-for-of": false
     }
 }

@@ -3,12 +3,14 @@ import { StoreState } from './types';
 import { connect, Dispatch } from 'react-redux';
 import AppComponent from './hello';
 
-export function mapStateToProps({ defaultValue, history = [], square = [], suggestionsList = [] }: StoreState) {
+export function mapStateToProps({ defaultValue, history = [], square = [], suggestionsList = [], tag, isWinner }: StoreState) {
     return {
         history,
         square,
         value: defaultValue,
         suggestionsList,
+        title: tag,
+        isWinner
 
     };
 }
